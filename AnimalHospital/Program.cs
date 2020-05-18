@@ -8,7 +8,7 @@ namespace AnimalHospital
         static void Main(string[] args)
         {
             hospital = InitializeHospital();
-            while (MainMenu()) {}
+            while (MainMenu()) { }
 
             Console.WriteLine("Goodbye!");
         }
@@ -26,15 +26,15 @@ namespace AnimalHospital
             Console.WriteLine();
 
             var k = Console.ReadKey().KeyChar;
-            if(k == '1')
+            if (k == '1')
             {
                 AdmitPatient();
-            } 
-            else if(k == '2')
+            }
+            else if (k == '2')
             {
                 Console.WriteLine("Not yet implemented!");
-            } 
-            else if(k == '3')
+            }
+            else if (k == '3')
             {
                 Console.WriteLine(hospital.doctors[0]);
             }
@@ -54,6 +54,9 @@ namespace AnimalHospital
             Console.WriteLine("Press any key to continue...");
             Console.ReadKey();
             return true;
+        }
+        static void dischargePatient() { 
+        
         }
 
         static void AdmitPatient()
