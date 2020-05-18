@@ -36,11 +36,11 @@ namespace AnimalHospital
             } 
             else if(k == '3')
             {
-                Console.WriteLine("Not yet implemented!");
+                Console.WriteLine(hospital.doctors[0]);
             }
             else if (k == '4')
             {
-                Console.WriteLine("Not yet implemented!");
+                InitializeHospital();
             }
             else if (k == '5')
             {
@@ -82,9 +82,12 @@ namespace AnimalHospital
                 new Doctor("Matt Tennant", "Spinal Injury"),
                 new Doctor("David Smith", "Knee Injury"),
                 new Doctor("Jodie Tyler", "Oncology"),
-                new Doctor("Rose Whitaker", "Intensive Care")
+                new Doctor("Rose Whitaker", "Intensive Care"),
             });
-
+            foreach (var values in hospital.doctors)
+            {
+                Console.WriteLine(values.name +" "+ values.speciality);
+            }
             return hospital;
         }
     }
