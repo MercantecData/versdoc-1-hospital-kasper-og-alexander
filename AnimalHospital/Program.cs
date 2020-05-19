@@ -68,13 +68,17 @@ namespace AnimalHospital
                 Console.WriteLine("please proceed with a number");
             }
             Patient key = new Patient(name, age);
-            if (key == hospital.patients[counter])
+            if (key != hospital.patients[counter])
+            {
+                counter++;
+            }
+            else if (key == hospital.patients[counter])
             {
                 new Hospital(hospital.name).DischargePatient(key);
             }
             else
             {
-                counter++;
+                Console.WriteLine("out of bound error 001");
             }
 
 
