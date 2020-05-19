@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 
 namespace AnimalHospital
 {
@@ -32,15 +33,15 @@ namespace AnimalHospital
             }
             else if (k == '2')
             {
-                Console.WriteLine("Not yet implemented!");
+                Discharge();
             }
             else if (k == '3')
             {
-                Console.WriteLine(hospital.doctors[0]);
+                Console.WriteLine("Not yet implemented!");
             }
             else if (k == '4')
             {
-                InitializeHospital();
+                Console.WriteLine("Not yet implemented!");
             }
             else if (k == '5')
             {
@@ -55,10 +56,31 @@ namespace AnimalHospital
             Console.ReadKey();
             return true;
         }
-        static void dischargePatient() { 
+        static void Discharge() {
+            string name;
+            int counter = 0;
+            int age;
+            Console.WriteLine("patints name?");
+            name = Console.ReadLine();
+            Console.WriteLine("patients age?");
+            while (!int.TryParse(Console.ReadLine(), out age))
+            {
+                Console.WriteLine("please proceed with a number");
+            }
+            Patient key = new Patient(name, age);
+            if (key == hospital.patients[counter])
+            {
+                new Hospital(hospital.name).DischargePatient(key);
+            }
+            else
+            {
+                counter++;
+            }
+
+
+            
         
         }
-
         static void AdmitPatient()
         {
             string name;
@@ -85,12 +107,9 @@ namespace AnimalHospital
                 new Doctor("Matt Tennant", "Spinal Injury"),
                 new Doctor("David Smith", "Knee Injury"),
                 new Doctor("Jodie Tyler", "Oncology"),
-                new Doctor("Rose Whitaker", "Intensive Care"),
+                new Doctor("Rose Whitaker", "Intensive Care")
             });
-            foreach (var values in hospital.doctors)
-            {
-                Console.WriteLine(values.name +" "+ values.speciality);
-            }
+
             return hospital;
         }
     }
