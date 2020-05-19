@@ -37,7 +37,7 @@ namespace AnimalHospital
             }
             else if (k == '3')
             {
-                Console.WriteLine("Not yet implemented!");
+                showpatient();
             }
             else if (k == '4')
             {
@@ -80,9 +80,16 @@ namespace AnimalHospital
             {
                 Console.WriteLine("out of bound error 001");
             }
-
+        }
 
             
+        static void showpatient()
+        {
+            foreach(var test in hospital.patients)
+            {
+                Console.WriteLine(test.name);
+            }
+        }
         
         }
         static void AdmitPatient()

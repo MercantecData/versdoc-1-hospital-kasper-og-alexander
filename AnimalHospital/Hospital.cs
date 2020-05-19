@@ -28,6 +28,14 @@ namespace AnimalHospital
             }
         }
 
+        public void showPatient(Patient pastient2)
+        {
+            foreach (object o in patients)
+            {
+                Console.WriteLine(o);
+            }
+        }
+
         public void DischargePatient(Patient patient)
         {
             if(!patients.Contains(patient))
