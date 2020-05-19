@@ -34,7 +34,7 @@ namespace AnimalHospital
             }
             else if (k == '2')
             {
-              
+                Karen();
             }
             else if (k == '3')
             {
@@ -46,7 +46,7 @@ namespace AnimalHospital
             }
             else if (k == '5')
             {
-               
+                patient_doctor();
             }
             else if (k == '0')
             {
@@ -57,7 +57,7 @@ namespace AnimalHospital
             Console.ReadKey();
             return true;
         }
-        public void patient_doctor()
+        static void patient_doctor()
         {
             Console.WriteLine("Doctors name");
             string doc = Console.ReadLine();
@@ -65,32 +65,6 @@ namespace AnimalHospital
             string pat = Console.ReadLine();
             hospital.test(doc, hospital.FindPatientByName(pat));
         }
-        static void Discharge() {
-            string name;
-            int counter = 0;
-            int age;
-            Console.WriteLine("patints name?");
-            name = Console.ReadLine();
-            Console.WriteLine("patients age?");
-            while (!int.TryParse(Console.ReadLine(), out age))
-            {
-                Console.WriteLine("please proceed with a number");
-            }
-            Patient key = new Patient(name, age);
-            if (key != hospital.patients[counter])
-            {
-                counter++;
-            }
-            else if (key == hospital.patients[counter])
-            {
-                new Hospital(hospital.name).DischargePatient(key);
-            }
-            else
-            {
-                Console.WriteLine("out of bound error 001");
-            }
-        }
-            
         static void showpatient()
         {
             foreach(var test in hospital.patients)
@@ -116,7 +90,7 @@ namespace AnimalHospital
             new Patient(name, age).AdmitTo(hospital);
         }
 
-        public void Karen()
+        static void Karen()
         {
             Console.WriteLine("Patients name");
             string pat = Console.ReadLine();
