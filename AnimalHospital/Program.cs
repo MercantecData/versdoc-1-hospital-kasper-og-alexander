@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows.Markup;
-using System;
 using System.Data;
 
 namespace AnimalHospital
@@ -35,7 +34,7 @@ namespace AnimalHospital
             }
             else if (k == '2')
             {
-                Discharge();
+              
             }
             else if (k == '3')
             {
@@ -47,7 +46,7 @@ namespace AnimalHospital
             }
             else if (k == '5')
             {
-                Console.WriteLine("Not yet implemented!");
+               
             }
             else if (k == '0')
             {
@@ -57,6 +56,14 @@ namespace AnimalHospital
             Console.WriteLine("Press any key to continue...");
             Console.ReadKey();
             return true;
+        }
+        public void patient_doctor()
+        {
+            Console.WriteLine("Doctors name");
+            string doc = Console.ReadLine();
+            Console.WriteLine("Patients name");
+            string pat = Console.ReadLine();
+            hospital.test(doc, hospital.FindPatientByName(pat));
         }
         static void Discharge() {
             string name;
@@ -107,6 +114,13 @@ namespace AnimalHospital
             }
 
             new Patient(name, age).AdmitTo(hospital);
+        }
+
+        public void Karen()
+        {
+            Console.WriteLine("Patients name");
+            string pat = Console.ReadLine();
+            hospital.DischargePatient(hospital.FindPatientByName(pat));
         }
 
         static Hospital InitializeHospital()

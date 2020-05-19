@@ -59,5 +59,16 @@ namespace AnimalHospital
 
             return null;
         }
+        public void test(string test2, Patient patient)
+        {
+            foreach(Doctor d in doctors)
+            {
+                if(d.name == test2)
+                {
+                    Console.WriteLine("Doctor found");
+                    d.assignedPatients.Add(patient);
+                }
+            }
+        }
     }
 }
