@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Windows.Markup;
+using System;
 using System.Data;
 
 namespace AnimalHospital
@@ -41,7 +43,7 @@ namespace AnimalHospital
             }
             else if (k == '4')
             {
-                Console.WriteLine("Not yet implemented!");
+               InitializeHospital();
             }
             else if (k == '5')
             {
@@ -81,7 +83,6 @@ namespace AnimalHospital
                 Console.WriteLine("out of bound error 001");
             }
         }
-
             
         static void showpatient()
         {
@@ -91,7 +92,6 @@ namespace AnimalHospital
             }
         }
         
-        }
         static void AdmitPatient()
         {
             string name;
@@ -120,8 +120,10 @@ namespace AnimalHospital
                 new Doctor("Jodie Tyler", "Oncology"),
                 new Doctor("Rose Whitaker", "Intensive Care")
             });
-
+             foreach(var values in hospital.doctors){
+        Console.WriteLine(values.name + " " + values.speciality);
+        }
             return hospital;
         }
     }
-}
+ }
